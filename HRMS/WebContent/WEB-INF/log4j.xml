@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="CONSOLE-APPENDER" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%p] %m(%C{1}:%L)%n" />
+		</layout>
+	</appender>
+	<logger name="ITRUS-CVM">
+		<level value="info" /><!-- 设置级别 -->
+		<!--appender-ref ref="CONSOLE-APPENDER" /-->
+	</logger>
+	<root>
+		<level value="info" /><!-- 设置级别，请修改！！！ -->
+		<appender-ref ref="CONSOLE-APPENDER" />
+		<!-- 与前面的通道id相对应 -->
+	</root>
+</log4j:configuration>

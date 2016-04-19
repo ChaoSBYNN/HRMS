@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+    <allow>
+    	<convert converter="bean" match="*"/>
+    	<convert match="array" converter="[S"/>
+    	
+        <create creator="spring" javascript="ajax">
+			<param name="beanName" value="BPAjax"/>
+	    </create>
+	    <create creator="spring" javascript="comdwr">
+            <param name="beanName" value="BPComDwr"/>
+        </create>
+	    
+    </allow>
+    <signatures>
+    	<![CDATA[
+            import org.json.simple.JSONObject;
+            import com.framework.ajax.JsonPage;
+    		
+    		JsonPage.jsonPaging(JSONObject<String,Object> map);
+    	]]>
+		<!-- 
+		<![CDATA[ <init></init>
+					<signatures></signatures>
+			import java.util.*;
+			import javax.servlet.http.*;
+		]]>
+		 -->
+	</signatures>
+</dwr>
