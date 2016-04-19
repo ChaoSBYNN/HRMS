@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.EmpMapper">
+	<select id="selectEmp" parameterType="com.zxc.entity.Emp" resultType="com.zxc.entity.Emp">
+		SELECT * FROM t_Emp WHERE empId = #{empId}
+	</select>
+	<select id="selectEmps" parameterType="java.lang.String" resultType="com.zxc.entity.Emp">
+		SELECT * FROM t_Emp
+	</select>
+	
+	<insert id="insertEmp" keyProperty="id" parameterType="com.zxc.entity.Emp" useGeneratedKeys="true">  
+        INSERT INTO t_Emp (userId) values (#{userId})  
+    </insert> 
+    
+    
+    <update id="updateEmp" parameterType="com.zxc.entity.Emp">  
+        UPDATE t_Emp SET userId = #{userId}
+        WHERE empId = #{empId} 
+    </update>  
+    <delete id="deleteEmp" parameterType="int">  
+        DELETE from t_Emp WHERE empId = #{empId}
+    </delete>  
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.StationMapper">
+	<select id="selectStation" parameterType="com.zxc.entity.Station"
+		resultType="com.zxc.entity.Station">
+		SELECT * FROM t_station WHERE stationId = #{stationId}
+	</select>
+	
+	<select id="selectStationByFatherId" parameterType="com.zxc.entity.Station"
+		resultType="com.zxc.entity.Station">
+		SELECT * FROM t_station WHERE fatherId = #{fatherId}
+	</select>
+	
+	<select id="selectStations" parameterType="java.lang.String"
+		resultType="com.zxc.entity.Station">
+		SELECT * FROM t_station
+	</select>
+
+	<insert id="insertStation" keyProperty="id" parameterType="com.zxc.entity.Station"
+		useGeneratedKeys="true">
+		INSERT INTO t_station (deptId,fatherId,stationName) values
+		(#{deptId},#{fatherId},#{stationName})
+	</insert>
+
+	<update id="updateStation" parameterType="com.zxc.entity.Station">
+		UPDATE t_station SET deptId = #{deptId},fatherId = #{fatherId},stationName =
+		#{stationName} WHERE stationId = #{stationId}
+	</update>
+	
+	<delete id="deleteStation" parameterType="int">
+		DELETE from t_station WHERE stationId = #{stationId}
+	</delete>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.ArticleClassMapper">
+	<select id="selectArticleClass" parameterType="com.zxc.entity.ArticleClass" resultType="com.zxc.entity.ArticleClass">
+		SELECT * FROM t_article_class WHERE articleClassId = #{articleClassId}
+	</select>
+	<select id="selectArticleClasss" parameterType="java.lang.String" resultType="com.zxc.entity.ArticleClass">
+		SELECT * FROM t_article_class
+	</select>
+	
+	<insert id="insertArticleClass" keyProperty="id" parameterType="com.zxc.entity.ArticleClass" useGeneratedKeys="true">  
+        INSERT INTO t_article_class (articleClassId,fatherId, articleClassName) VALUES (#{articleClassId},#{fatherId},#{articleClassName})  
+    </insert> 
+    
+    <update id="updateArticleClass" parameterType="com.zxc.entity.ArticleClass">  
+        UPDATE t_article_class SET articleClassId = #{articleClassId}, fatherId = #{fatherId}, articleClassName = #{articleClassName} WHERE articleClassId = #{articleClassId}  
+    </update>  
+    <delete id="deleteArticleClass" parameterType="int">  
+        DELETE from t_article_class WHERE articleClassId = #{articleClassId}  
+    </delete>  
+</mapper>

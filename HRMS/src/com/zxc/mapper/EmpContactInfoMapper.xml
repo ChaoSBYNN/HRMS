@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.EmpContactInfoMapper">
+	<select id="selectEmpContactInfo" parameterType="com.zxc.entity.EmpContactInfo"
+		resultType="com.zxc.entity.EmpContactInfo">
+		SELECT * FROM t_emp_contact_info WHERE empContactId =
+		#{empContactId}
+	</select>
+	<select id="selectEmpContactInfos" parameterType="java.lang.String"
+		resultType="com.zxc.entity.EmpContactInfo">
+		SELECT * FROM t_emp_contact_info
+	</select>
+
+	<insert id="insertEmpContactInfo" keyProperty="id"
+		parameterType="com.zxc.entity.EmpContactInfo" useGeneratedKeys="true">
+		INSERT INTO t_emp_contact_info
+		(empId,officePhone,homePhone,mobilePhone,empEmail,empAddress) 
+		VALUES
+		(#{empId},#{officePhone},#{homePhone},#{mobilePhone},#{empEmail},#{empAddress})
+	</insert>
+
+
+	<update id="updateEmpContactInfo" parameterType="com.zxc.entity.EmpContactInfo">
+		UPDATE t_emp_contact_info 
+		SET 
+		empId = #{empId},officePhone = #{officePhone},homePhone = #{homePhone},
+		mobilePhone = #{mobilePhone},empEmail = #{empEmail},empAddress = #{empAddress} 
+		WHERE empContactId = #{empContactId}
+	</update>
+	<delete id="deleteEmpContactInfo" parameterType="int">
+		DELETE from t_emp_contact_info WHERE empContactId = #{empContactId}
+	</delete>
+</mapper>

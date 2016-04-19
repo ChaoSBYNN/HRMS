@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.MissionMapper">
+	<select id="selectMission" parameterType="com.zxc.entity.Mission" resultType="com.zxc.entity.Mission">
+		SELECT * FROM t_Mission WHERE missionId = #{missionId}
+	</select>
+	<select id="selectMissions" parameterType="java.lang.String" resultType="com.zxc.entity.Mission">
+		SELECT * FROM t_Mission
+	</select>
+	
+	<insert id="insertMission" keyProperty="id" parameterType="com.zxc.entity.Mission" useGeneratedKeys="true">  
+        INSERT INTO t_Mission (issuerId,missionName,missionInfo,issuedate) values (#{issuerId},#{missionName},#{missionInfo},#{issuedate})  
+    </insert> 
+    
+    
+    <update id="updateMission" parameterType="com.zxc.entity.Mission">  
+        UPDATE t_Mission SET issuerId = #{issuerId}, missionName = #{missionName} , missionInfo = #{missionInfo}  , issuedate = #{issuedate}
+        WHERE missionId = #{missionId}
+    </update>  
+    <delete id="deleteMission" parameterType="int">  
+        DELETE from t_Mission WHERE missionId = #{missionId}  
+    </delete>  
+</mapper>

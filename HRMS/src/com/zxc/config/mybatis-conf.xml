@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/hrms"/>
+				<property name="username" value="root"/>
+				<property name="password" value="helloworld"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/zxc/mapper/ArticleMapper.xml"/>
+		<mapper resource="com/zxc/mapper/ArticleClassMapper.xml"/>
+		<mapper resource="com/zxc/mapper/DeptMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpBaseInfoMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpContactInfoMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpEducationInfoMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpOfficeInfoMapper.xml"/>
+		<mapper resource="com/zxc/mapper/EmpWorkInfoMapper.xml"/>
+		<mapper resource="com/zxc/mapper/MissionMapper.xml"/>
+		<mapper resource="com/zxc/mapper/ResumeMapper.xml"/>
+		<mapper resource="com/zxc/mapper/StationMapper.xml"/>
+		<mapper resource="com/zxc/mapper/UserMapper.xml"/>
+	</mappers>
+	
+</configuration>

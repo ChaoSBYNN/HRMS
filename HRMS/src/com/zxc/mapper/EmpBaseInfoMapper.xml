@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxc.mapper.EmpBaseInfoMapper">
+	<select id="selectEmpBaseInfo" parameterType="com.zxc.entity.EmpBaseInfo"
+		resultType="com.zxc.entity.EmpBaseInfo">
+		SELECT * FROM t_emp_base_info WHERE EmpBaseInfoId = #{EmpBaseInfoId}
+	</select>
+	<select id="selectEmpBaseInfos" parameterType="java.lang.String"
+		resultType="com.zxc.entity.EmpBaseInfo">
+		SELECT * FROM t_emp_base_info
+	</select>
+
+	<insert id="insertEmpBaseInfo" keyProperty="id"
+		parameterType="com.zxc.entity.EmpBaseInfo" useGeneratedKeys="true">
+		INSERT
+		INTO t_emp_base_info
+		(empId,empAge,stationId,idCard,empSex,empName,empEducation,empbirthday)
+		values
+		(#{empId},#{empAge},#{stationId},#{idCard},#{empSex},#{empName},#{empEducation},#{empBirthday})
+	</insert>
+
+
+	<update id="updateEmpBaseInfo" parameterType="com.zxc.entity.EmpBaseInfo">
+		UPDATE
+		t_emp_base_info SET EmpBaseInfoname = #{EmpBaseInfoname}, password =
+		#{password} where EmpBaseInfoid = #{EmpBaseInfoid}
+	</update>
+	<delete id="deleteEmpBaseInfo" parameterType="int">
+		DELETE from
+		t_emp_base_info WHERE EmpBaseInfoId = #{EmpBaseInfoId}
+	</delete>
+</mapper>
