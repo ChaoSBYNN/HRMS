@@ -2,15 +2,8 @@
 ![image](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3489103920,3432591277&fm=58)
 ##黑龙江大学毕业论文项目
 
-###2016-04-19 By ChaoS_Zhang
+###2016-04-19
 	Github 大文件上传速度过慢 将Jar存放于lib.zip中 
 	使用时解压放置于\WebContent\WEB-INF\lib
-	
-	p.s. 文件上传慢部分原因:使用SSH上传方式 
-		有教程解决使用HTTPS方式上传速度可由 5K => 200K+
-		未实现，速度还是缓慢
-		44M文件20分钟同步完成
-
-
 
 
