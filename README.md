@@ -1,5 +1,6 @@
 #(HRMS)High Resolution Mass Spectrometer By ChaoS_Zhang 
-##黑龙江大学毕业论文项目![image](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3489103920,3432591277&fm=58)
+![image](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3489103920,3432591277&fm=58)
+##黑龙江大学毕业论文项目
 
 ###2016-04-19 By ChaoS_Zhang
 	Github 大文件上传速度过慢 将Jar存放于lib.zip中 
